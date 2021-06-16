@@ -22,7 +22,7 @@ function notionPropertiesById(properties) {
   }, {});
 }
 
-function createForum({ title, description, tags }) {
+function createForum({ title, description, tags, author }) {
   notion.pages.create({
     parent: {
       database_id: process.env.DATABASE_ID,
@@ -48,6 +48,17 @@ function createForum({ title, description, tags }) {
           },
         ],
       },
+      [process.env.AUTHOR_PERSON_ID]: {
+        rich_text: [
+          {
+            type: "text",
+            text: {
+              content: author,
+            },
+          },
+        ],
+      },
+
       [process.env.NOTION_VOTES_ID]: {
         number: 0,
       },
@@ -83,6 +94,8 @@ function fromNotionObject(notionPage) {
     description:
       propertiesById[process.env.NOTION_DESCRIPTION_ID].rich_text[0].text
         .content,
+    author:
+      propertiesById[process.env.AUTHOR_PERSON_ID].rich_text[0].text.content,
   };
 }
 

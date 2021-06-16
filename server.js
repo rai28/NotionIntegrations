@@ -27,11 +27,12 @@ app.get("/", async (req, res) => {
   res.render("index", { tags, respForum });
 });
 app.post("/create-forum", async (req, res) => {
-  const { title, description, tagIds = [] } = req.body;
+  const { title, author, description, tagIds = [] } = req.body;
 
   await notionClient.createForum({
     title,
     description,
+    author,
     tags: Array.isArray(tagIds)
       ? tagIds
       : [tagIds].map((tagId) => {
@@ -40,7 +41,9 @@ app.post("/create-forum", async (req, res) => {
   });
   res.redirect("/");
 });
-
+app.get("/about-this", (req, res) => {
+  res.render("about-this");
+});
 app.post("/up-vote-suggestion", async (req, res) => {
   const votes = await upVoteSuggestion(req.body.suggestionId);
   res.json({ votes });
