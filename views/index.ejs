@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50 Words Anime</title>
+</head>
+<body>
+    <div class="container">
+        <h1>50 Words Anime</h1>
+        <form action="/create-forum"method="POST">
+        <div class="row">
+            <label for="title">Anime Name</label>
+            <input type="text"name="title" id="title"required
+            class="">
+        </div>
+        <div class="row">
+            <label for="tagIds">Category Of Anime</label>
+            <select name="tagIds" id="tagIds"class="" multiple>
+               <% tags.forEach(tag => {%>
+                <option value="<%=tag.id %>"><%=tag.name %></option>
+               <%}) %> 
+            </select>
+        </div>
+        <div class="">
+            <label for="description"></label>
+            <textarea name="description" id="description" class="" required maxlength="250"placeholder="Write your thoughts about this anime here in 50 words..."></textarea>
+        </div>
+        <button type="submit">Create Forum</button>
+        </form>
+    </div>
+</body>
+</html>
