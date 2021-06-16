@@ -1,0 +1,103 @@
+*:focus {
+  outline: none;
+}
+html {
+  --scrollbarBG: #cfd8dc;
+  --thumbBG: #d8365e;
+}
+body::-webkit-scrollbar {
+  width: 11px;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  font-family: "Roboto Slab", serif !important;
+}
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+.anime-input-name {
+  margin-top: 7px;
+  height: 50px;
+  max-width: fit-content;
+  border: 2px solid black !important;
+  border-radius: 10px !important;
+}
+
+.description-input {
+  border: 2px solid black !important;
+  border-radius: 10px !important;
+}
+.submit-button {
+  text-align: center;
+  margin-top: 20px;
+  /* padding: 15px 20px; */
+  width: 200px;
+  height: 70px;
+  border: 1px solid black !important;
+  border-radius: 20px !important;
+  text-align: center;
+  background-color: #f8adad;
+  color: white;
+}
+.submit-button-div {
+  text-align: center;
+}
+.forum-data {
+  border: 1px solid black !important;
+  border-radius: 10px !important;
+}
+.forum-post-heading {
+  margin-top: 50px;
+  padding: 10px;
+  border: 2px solid black !important;
+  border-radius: 10px !important;
+  max-width: fit-content;
+  text-align: center;
+}
+.hello-user {
+  margin-bottom: 50px;
+}
+.category-menu {
+  margin-top: 20px;
+}
+.dropdown-menus {
+  border: 2px solid black !important;
+  border-radius: 10px !important;
+  height: 50px;
+}
+.header-image {
+  text-align: right;
+  margin: 20px;
+  height: 100px;
+  width: 100px;
+}
+.header-content {
+  text-align: right;
+}
+.container {
+  margin: ;
+}
+.drp-menus {
+  margin-top: 7px;
+}
+#heart-btn {
+  padding: 10px;
+  background: #f8adad;
+}
+.card-header {
+  background: none !important;
+}
+.main-title {
+  padding: 5px 15px;
+  font-size: larger;
+  border: 0.5px solid black;
+  border-radius: 20px;
+  /* background-color: #005507; */
+  /* color: black; */
+}
